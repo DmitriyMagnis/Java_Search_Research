@@ -8,10 +8,10 @@ public class DataProvider {
 
     public DataProvider() {
         this.products = new Product[] {
-                new Product("apple",1520.89),
-                new Product("grape",2058.35),
-                new Product("mango",1220.39),
-                new Product("orange",1120.19)
+                new Product<>("apple",1520.89),
+                new Product<>("grape",2058.35),
+                new Product<>("mango",1220.39),
+                new Product<>("orange",1120.19)
         };
     }
 

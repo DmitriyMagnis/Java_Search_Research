@@ -4,16 +4,18 @@ public class AppController {
     public void runApp() {
         DataProvider provider = new DataProvider();
         DataHandler dataHandler = new DataHandler();
+        Outputer outputer = new Outputer();
+
 
         try {
             String namesOutput = dataHandler.handleData(provider.getProductNames());
             getOutput("Products: " + namesOutput);
 
             String salesOutput = dataHandler.handleData(provider.getSalesAmounts());
-            getOutput("Sales, EUR: " + salesOutput);
+            outputer.getOutput("Sales, EUR: " + salesOutput);
 
         } catch (IllegalArgumentException e) {
-            getOutput("Error: " +e.getMessage());
+            outputer.getOutput("Error: " +e.getMessage());
         }
 
     }

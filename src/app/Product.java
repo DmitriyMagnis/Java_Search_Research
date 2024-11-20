@@ -1,18 +1,21 @@
 package app;
 
-public class Product {
-    private final String name;
-    private final Double amount;
+public class Product<T, U> implements IProduct<T, U> {
+    private final T name;
+    private final U amount;
 
-    public Product(String name, Double amount) {
+
+    public Product(T name, U amount) {
         this.name = name;
         this.amount = amount;
     }
 
-    public String getProductName() {
+    @Override
+    public T getProductName() {
         return name;
     }
-    public Double getProductAmount() {
+    @Override
+    public U getProductAmount() {
         return amount;
     }
 }
